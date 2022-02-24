@@ -1,0 +1,10 @@
+/** dark-theme **/
+.dark-theme {
+  --text-color: var(--c-white);
+  --foreground: hsl(209deg 23% 22%);
+  --background: hsl(207deg 26% 17%);
+
+  .light {
+    display: none;
+  }
+}

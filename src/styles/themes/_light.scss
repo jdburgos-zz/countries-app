@@ -1,0 +1,10 @@
+/** light-theme **/
+.light-theme {
+  --text-color: var(--c-dark);
+  --foreground: var(--c-white);
+  --background: hsl(0deg 0% 52%);
+
+  .dark {
+    display: none;
+  }
+}
