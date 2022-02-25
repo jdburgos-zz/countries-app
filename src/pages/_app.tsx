@@ -3,7 +3,7 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 
 /** Components **/
-import { MainContainer } from '../Components/layout/MainContainer';
+import { MainContainer } from '../components/layout/MainContainer';
 
 /** Styles **/
 import '@styles/styles.scss';
