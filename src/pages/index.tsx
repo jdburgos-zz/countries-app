@@ -1,8 +1,9 @@
 /** Next core **/
-import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
+import type { NextPage } from 'next';
 
 /** Dependencies **/
 import { Input, Select } from 'antd';
+import useSWR from 'swr';
 
 /** Components **/
 import { CountryItem } from '@components/CountryItem';
@@ -11,7 +12,15 @@ import { ICountry } from '@interfaces/country.interface';
 /** Antd **/
 const { Option } = Select;
 
-const Home: NextPage = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const fetcher = (url: string) => fetch(url).then(res => res.json());
+const API = 'https://restcountries.com/v3.1/all';
+
+const Home: NextPage = () => {
+  const { data, error } = useSWR(API, fetcher);
+
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+
   const countries = data.map((country: ICountry, index: number) => (
     <CountryItem key={index} country={country} />
   ));
@@ -32,12 +41,3 @@ const Home: NextPage = ({ data }: InferGetServerSidePropsType<typeof getServerSi
 };
 
 export default Home;
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await fetch('https://restcountries.com/v3.1/all');
-  const data = await response.json();
-
-  return {
-    props: { data },
-  };
-};
