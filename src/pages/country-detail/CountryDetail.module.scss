@@ -1,0 +1,37 @@
+.country-detail {
+  padding-top: 40px;
+
+  &__btn {
+    background-color: var(--foreground);
+    border: none;
+    box-shadow: 0 0 5px 2px rgb(0 0 0 / 10%);
+    color: var(--text-color);
+    cursor: pointer;
+    height: 35px;
+  }
+
+  &__description {
+    &:not(&:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__content {
+    margin-bottom: 60px;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__actions {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

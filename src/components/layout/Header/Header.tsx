@@ -4,14 +4,22 @@ import { useState } from 'react';
 /** Next core **/
 import Link from 'next/link';
 
+/** Hooks **/
+import { useAppDispatch } from '@hooks/react-redux';
+
+/** Reducers **/
+import { setTheme } from '@store/ui/ui.reducer';
+
 /** Styles **/
 import styles from './Header.module.scss';
 
 export const Header = () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, switchTheme] = useState('dark');
+  const dispatch = useAppDispatch();
 
   const handleThemeSwitch = () => {
-    setTheme(prevState => (prevState === 'light' ? 'dark' : 'light'));
+    switchTheme(prevState => (prevState === 'light' ? 'dark' : 'light'));
+    dispatch(setTheme(theme));
   };
 
   const icon = theme === 'dark' ? 'cp-moon-o' : 'cp-sun';

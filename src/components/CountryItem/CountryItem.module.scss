@@ -1,9 +1,10 @@
 .country-item {
+  background-color: var(--foreground);
   overflow: hidden;
   padding: 0;
 
   &__link {
-    color: var(--c-dark);
+    color: var(--text-color);
     text-decoration: none;
   }
 

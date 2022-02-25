@@ -2,7 +2,7 @@
 .light-theme {
   --text-color: var(--c-dark);
   --foreground: var(--c-white);
-  --background: hsl(0deg 0% 52%);
+  --background: var(--c-white);
 
   .dark {
     display: none;

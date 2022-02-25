@@ -1,9 +1,18 @@
+/** React core **/
+import React from 'react';
+
 /** Next core **/
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { useRouter } from 'next/router';
+
+/** Dependencies **/
+import { Button } from 'antd';
+
+/** Interfaces **/
 import { ICountry } from '@interfaces/country.interface';
-import styles from '@components/CountryItem/CountryItem.module.scss';
-import React from 'react';
+
+/** Styles **/
+import styles from './CountryDetail.module.scss';
 
 const CountryDetail: NextPage = ({ country }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
@@ -23,63 +32,71 @@ const CountryDetail: NextPage = ({ country }: InferGetStaticPropsType<typeof get
         .join(', ')
     : null;
   const borderCountries = country.borders
-    ? Object.entries(country.borders)
-        .map((borderCountry: any) => borderCountry[1])
-        .join(', ')
+    ? Object.entries(country.borders).map((borderCountry: any, index) => (
+        <Button type="primary" key={index} className={styles['country-detail__btn']}>
+          {borderCountry[1]}
+        </Button>
+      ))
     : null;
   const borderCountriesContent = (
-    <div>
-      <span>Border Countries: </span>
-      <span>{borderCountries}</span>
+    <div className={styles['country-detail__footer']}>
+      <h3>Border Countries: </h3>
+      <div className={styles['country-detail__actions']}>{borderCountries}</div>
     </div>
   );
   const currenciesContent = (
-    <div>
-      <span>Currencies: </span>
-      <span>{currencies}</span>
+    <div className={styles['country-detail__description']}>
+      <span className={styles['country-detail__label']}>Currencies: </span>
+      <span className={styles['country-detail__text']}>{currencies}</span>
     </div>
   );
   const languagesContent = (
-    <div>
-      <span>Languages: </span>
-      <span>{languages}</span>
+    <div className={styles['country-detail__description']}>
+      <span className={styles['country-detail__label']}>Languages: </span>
+      <span className={styles['country-detail__text']}>{languages}</span>
     </div>
   );
 
   return (
-    <div>
+    <div className={styles['country-detail']}>
       <img
-        className={styles['country-item__img']}
+        className={styles['country-detail__img']}
         src={country.flags.svg}
         alt={country.name.official}
       />
       <h1>{country.name.common}</h1>
-      <div>
-        <span>Native Name: </span>
-        <span>{country.name.official}</span>
+      <div className={styles['country-detail__content']}>
+        <div className={styles['country-detail__description']}>
+          <span className={styles['country-detail__label']}>Native Name: </span>
+          <span className={styles['country-detail__text']}>{country.name.official}</span>
+        </div>
+        <div className={styles['country-detail__description']}>
+          <span className={styles['country-detail__label']}>Population: </span>
+          <span className={styles['country-detail__text']}>
+            {country.population.toLocaleString('en')}
+          </span>
+        </div>
+        <div className={styles['country-detail__description']}>
+          <span className={styles['country-detail__label']}>Region: </span>
+          <span className={styles['country-detail__text']}>{country.region}</span>
+        </div>
+        <div className={styles['country-detail__description']}>
+          <span className={styles['country-detail__label']}>Sub Region: </span>
+          <span className={styles['country-detail__text']}>{country.subregion}</span>
+        </div>
+        <div className={styles['country-detail__description']}>
+          <span className={styles['country-detail__label']}>Capital: </span>
+          <span className={styles['country-detail__text']}>{country.capital}</span>
+        </div>
       </div>
-      <div>
-        <span>Population: </span>
-        <span>{country.population}</span>
+      <div className={styles['country-detail__content']}>
+        <div className={styles['country-detail__description']}>
+          <span className={styles['country-detail__label']}>Top Level Domain: </span>
+          <span className={styles['country-detail__text']}>{country.tld[0]}</span>
+        </div>
+        {currencies && currenciesContent}
+        {languages && languagesContent}
       </div>
-      <div>
-        <span>Region: </span>
-        <span>{country.region}</span>
-      </div>
-      <div>
-        <span>Sub Region: </span>
-        <span>{country.subregion}</span>
-      </div>
-      <div>
-        <span>Capital: </span>
-        <span>{country.capital}</span>
-      </div>
-      <div>
-        <span>Top Level Domain: </span>
-        <span>{country.tld}</span>
-      </div>
-      {currencies && currenciesContent}
-      {languages && languagesContent}
       {borderCountries && borderCountriesContent}
     </div>
   );
