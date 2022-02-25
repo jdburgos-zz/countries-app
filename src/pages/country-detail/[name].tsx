@@ -21,6 +21,7 @@ const CountryDetail: NextPage = ({ country }: InferGetStaticPropsType<typeof get
     return <div>Loading...</div>;
   }
 
+  const domain = country.tld ? country.tld[0] : null;
   const currencies = country.currencies
     ? Object.entries(country.currencies)
         .map((currency: any) => currency[1].name)
@@ -38,6 +39,12 @@ const CountryDetail: NextPage = ({ country }: InferGetStaticPropsType<typeof get
         </Button>
       ))
     : null;
+  const domainContent = (
+    <div className={styles['country-detail__description']}>
+      <span className={styles['country-detail__label']}>Top Level Domain: </span>
+      <span className={styles['country-detail__text']}>{domain}</span>
+    </div>
+  );
   const borderCountriesContent = (
     <div className={styles['country-detail__footer']}>
       <h3>Border Countries: </h3>
@@ -90,10 +97,7 @@ const CountryDetail: NextPage = ({ country }: InferGetStaticPropsType<typeof get
         </div>
       </div>
       <div className={styles['country-detail__content']}>
-        <div className={styles['country-detail__description']}>
-          <span className={styles['country-detail__label']}>Top Level Domain: </span>
-          <span className={styles['country-detail__text']}>{country.tld[0]}</span>
-        </div>
+        {domain && domainContent}
         {currencies && currenciesContent}
         {languages && languagesContent}
       </div>
