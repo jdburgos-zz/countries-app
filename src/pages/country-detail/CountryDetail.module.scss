@@ -8,6 +8,14 @@
     color: var(--text-color);
     cursor: pointer;
     height: 35px;
+
+    &-back {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 35px;
+      min-width: 110px;
+    }
   }
 
   &__description {

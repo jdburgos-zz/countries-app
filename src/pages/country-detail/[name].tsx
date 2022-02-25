@@ -34,7 +34,7 @@ const CountryDetail: NextPage = ({ country }: InferGetStaticPropsType<typeof get
     : null;
   const borderCountries = country.borders
     ? Object.entries(country.borders).map((borderCountry: any, index) => (
-        <Button type="primary" key={index} className={styles['country-detail__btn']}>
+        <Button key={index} className={styles['country-detail__btn']}>
           {borderCountry[1]}
         </Button>
       ))
@@ -64,8 +64,14 @@ const CountryDetail: NextPage = ({ country }: InferGetStaticPropsType<typeof get
     </div>
   );
 
+  const clases = `${styles['country-detail__btn']} ${styles['country-detail__btn-back']}`;
+
   return (
     <div className={styles['country-detail']}>
+      <Button className={clases} onClick={() => router.back()}>
+        <i className="cp-arrow-left2"></i>
+        <span>Back</span>
+      </Button>
       <img
         className={styles['country-detail__img']}
         src={country.flags.svg}
