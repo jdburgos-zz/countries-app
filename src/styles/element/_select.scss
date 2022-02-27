@@ -1,0 +1,24 @@
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: var(--foreground);
+  border: 1px solid var(--foreground);
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 10%);
+  color: var(--text-color);
+  transition: none;
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-item {
+  transition: none;
+}
+
+.ant-select-arrow .anticon {
+  color: var(--text-color);
+}
+
+.ant-select-clear .anticon {
+  background: var(--foreground);
+  color: var(--text-color);
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: var(--foreground);
+}

@@ -1,0 +1,7 @@
+a {
+  transition: none;
+
+  &:hover {
+    color: var(--text-color);
+  }
+}

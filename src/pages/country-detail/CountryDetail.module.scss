@@ -8,6 +8,14 @@
     color: var(--text-color);
     cursor: pointer;
     height: 35px;
+    transition: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--foreground);
+      color: var(--text-color);
+    }
 
     &-back {
       align-items: center;

@@ -11,6 +11,7 @@ import { ICountry } from '@interfaces/country.interface';
 
 /** Antd **/
 const { Option } = Select;
+const { Search } = Input;
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 const API = 'https://restcountries.com/v3.1/all';
@@ -25,10 +26,34 @@ const Home: NextPage = () => {
     <CountryItem key={index} country={country} />
   ));
 
+  const handleSearch = (value: string) => {
+    if (!value) return;
+
+    console.log(value);
+  };
+
+  const handleSelect = (value: string) => {
+    console.log(value);
+  };
+
   return (
     <>
-      <Input placeholder="Basic usage" />
-      <Select placeholder="Filter by Region">
+      <Search
+        className="input"
+        placeholder="Search for a country..."
+        onSearch={handleSearch}
+        allowClear
+        size="large"
+        style={{ marginBottom: '30px' }}
+      />
+      <Select
+        allowClear
+        size="large"
+        style={{ marginBottom: '30px' }}
+        className="select"
+        placeholder="Filter by Region"
+        onSelect={handleSelect}
+      >
         <Option value="africa">Africa</Option>
         <Option value="america">America</Option>
         <Option value="asia">Asia</Option>

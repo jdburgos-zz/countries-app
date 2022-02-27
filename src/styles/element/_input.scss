@@ -1,0 +1,36 @@
+.ant-input-affix-wrapper {
+  background-color: var(--foreground);
+  border: 1px solid var(--foreground);
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 10%);
+  transition: none;
+}
+
+.ant-input {
+  background-color: var(--foreground);
+  color: var(--text-color);
+  transition: none;
+}
+
+.anticon.ant-input-clear-icon {
+  &,
+  &:hover {
+    color: var(--text-color);
+    opacity: 0.5;
+    transition: none;
+  }
+}
+
+.ant-input-search
+  > .ant-input-group
+  > .ant-input-group-addon:last-child
+  .ant-input-search-button:not(.ant-btn-primary) {
+  border: 1px solid var(--foreground);
+  background-color: var(--foreground);
+  color: var(--text-color);
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 10%);
+  transition: none;
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
+  background-color: var(--foreground);
+}
