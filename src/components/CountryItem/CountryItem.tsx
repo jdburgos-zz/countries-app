@@ -5,10 +5,10 @@ import React from 'react';
 import Link from 'next/link';
 
 /** Components **/
-import { Card } from '@components/ui';
+import { Card } from '@/components/ui';
 
 /** Interfaces **/
-import { ICountry } from '@interfaces/country.interface';
+import { ICountry } from '@/interfaces/country.interface';
 
 import styles from './CountryItem.module.scss';
 

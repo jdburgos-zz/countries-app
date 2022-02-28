@@ -5,10 +5,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 /** Hooks **/
-import { useAppDispatch } from '@hooks/react-redux';
+import { useAppDispatch } from '@/hooks/react-redux';
 
 /** Reducers **/
-import { setTheme } from '@store/ui/ui.reducer';
+import { setTheme } from '@/store/ui/ui.reducer';
 
 /** Styles **/
 import styles from './Header.module.scss';

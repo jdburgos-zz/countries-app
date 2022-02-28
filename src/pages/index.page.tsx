@@ -2,17 +2,17 @@
 import { useEffect, useState } from 'react';
 
 /** Next core **/
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 
 /** Dependencies **/
 import { Input, Select } from 'antd';
 import useSWR from 'swr';
 
 /** Components **/
-import { CountryItem } from '@components/CountryItem';
+import { CountryItem } from '@/components/CountryItem';
 
 /** Interfaces **/
-import { ICountry } from '@interfaces/country.interface';
+import { ICountry } from '@/interfaces/country.interface';
 
 /** Antd **/
 const { Option } = Select;
@@ -93,3 +93,11 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const title = 'Home';
+
+  return {
+    props: { title },
+  };
+};

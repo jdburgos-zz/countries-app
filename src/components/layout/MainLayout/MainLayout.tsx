@@ -2,10 +2,10 @@
 import React from 'react';
 
 /** Components **/
-import { MainContainer } from '@components/layout/MainContainer';
+import { MainContainer } from '@/components/layout/MainContainer';
 
 /** Hooks **/
-import { useAppSelector } from '@hooks/react-redux';
+import { useAppSelector } from '@/hooks/react-redux';
 
 type MainLayoutProps = {
   children: React.ReactNode;

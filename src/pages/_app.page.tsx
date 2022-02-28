@@ -6,13 +6,13 @@ import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 
 /** Components **/
-import { MainLayout } from '@components/layout/MainLayout';
+import { MainLayout } from '@/components/layout/MainLayout';
 
 /** Store **/
-import store from '@store/index';
+import store from '@/store/index';
 
 /** Styles **/
-import '@styles/styles.scss';
+import '@/styles/styles.scss';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const { title } = pageProps;

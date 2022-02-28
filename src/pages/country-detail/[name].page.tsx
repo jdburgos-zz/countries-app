@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import { Button } from 'antd';
 
 /** Interfaces **/
-import { ICountry } from '@interfaces/country.interface';
+import { ICountry } from '@/interfaces/country.interface';
 
 /** Styles **/
 import styles from './CountryDetail.module.scss';
