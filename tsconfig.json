@@ -3,18 +3,12 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@config/*": ["src/config/*"],
-      "@data/*": ["src/data/*"],
-      "@enums/*": ["src/enums/*"],
-      "@hoc/*": ["src/hoc/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@images/*": ["src/images/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@pages/*": ["pages/*"],
       "@public/*": ["public/*"],
       "@store/*": ["src/store/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
