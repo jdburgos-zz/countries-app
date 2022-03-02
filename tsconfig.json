@@ -2,11 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/mocks/*": ["__mocks__/*"],
       "@/components/*": ["src/components/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/interfaces/*": ["src/interfaces/*"],
       "@/pages/*": ["src/pages/*"],
-      "@/public/*": ["public/*"],
       "@/store/*": ["src/store/*"],
       "@/styles/*": ["src/styles/*"],
     },

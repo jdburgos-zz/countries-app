@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import Home from '@/pages/index.page';
 
 describe('Home', () => {
-  it('renders a error message when there is no data', () => {
+  it('should render a error message when there is no data', () => {
     render(<Home />);
 
     const errorMessage = screen.getByText('failed to load');
