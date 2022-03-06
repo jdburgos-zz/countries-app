@@ -32,9 +32,11 @@ describe('Header', () => {
     );
 
     userEvent.click(screen.getByText('dark Mode'));
+    const lightThemeText = screen.getByText('light Mode');
+    expect(lightThemeText).toBeInTheDocument();
 
-    const themeText = screen.getByText('light Mode');
-
-    expect(themeText).toBeInTheDocument();
+    userEvent.click(screen.getByText('light Mode'));
+    const darkThemeText = screen.getByText('dark Mode');
+    expect(darkThemeText).toBeInTheDocument();
   });
 });

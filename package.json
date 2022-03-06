@@ -11,7 +11,8 @@
     "stylelint": "stylelint \"**/*.scss\" --fix",
     "prepare": "husky install",
     "cypress": "cypress open",
-    "test": "jest --watch",
+    "test": "jest --watch --verbose",
+    "test:co": "jest --coverage --verbose",
     "test:ci": "jest --ci"
   },
   "dependencies": {

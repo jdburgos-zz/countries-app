@@ -17,6 +17,7 @@ const customJestConfig = {
     '^@/styles/(.*)$': '<rootDir>/src/styles/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
+  testPathIgnorePatterns: ['<rootDir>/cypress/'],
 };
 
 module.exports = createJestConfig(customJestConfig);
