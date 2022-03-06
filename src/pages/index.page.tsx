@@ -71,6 +71,7 @@ const Home: NextPage = () => {
         size="large"
         style={{ marginBottom: '30px' }}
         onSearch={handleSearch}
+        data-test="input-search"
       />
       <Select
         allowClear
@@ -80,6 +81,7 @@ const Home: NextPage = () => {
         placeholder="Filter by Region"
         onSelect={handleSelect}
         onClear={handleClear}
+        data-test="region-filter"
       >
         <Option value="africa">Africa</Option>
         <Option value="americas">Americas</Option>

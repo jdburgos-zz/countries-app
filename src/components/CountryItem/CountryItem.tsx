@@ -19,7 +19,7 @@ type CountryItemProps = {
 export const CountryItem: React.FC<CountryItemProps> = ({ country }) => (
   <Card className={styles['country-item']}>
     <Link href={`/country-detail/${country.name.common}`}>
-      <a className={styles['country-item__link']}>
+      <a className={styles['country-item__link']} data-test="country-item">
         <img
           className={styles['country-item__img']}
           src={country.flags.svg}
