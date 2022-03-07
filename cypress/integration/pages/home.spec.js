@@ -4,6 +4,7 @@ describe('Home page', () => {
   });
 
   it('renders de base content', () => {
+    cy.title().should('include', 'Countries App - Home');
     cy.contains('Where in the world?');
     cy.contains('dark Mode');
     cy.contains('loading...');
@@ -44,9 +45,11 @@ describe('Home page', () => {
 
     describe('when does exit', () => {
       const searchText = 'Colombia';
+      const countryFlag = 'https://flagcdn.com/co.svg';
 
       afterEach(() => {
         cy.get('[data-test=region-filter] + div').should('have.length.at.most', 1);
+        cy.get('img').invoke('attr', 'src').should('eq', countryFlag);
         cy.get('[data-test=region-filter] + div h3').first().should('have.text', searchText);
         cy.get('.ant-input-suffix').children('.ant-input-clear-icon').click();
         cy.get('[data-test=region-filter] + div').should('have.length.at.most', 1);
