@@ -6,15 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "npx eslint . --fix",
-    "format": "prettier . --write",
+    "lint": "npx eslint . --cache --fix",
+    "format": "prettier . --write --ignore-unknown",
     "stylelint": "stylelint \"**/*.scss\" --fix",
     "prepare": "husky install",
     "cypress": "cypress open",
     "cypress:ci": "cypress run",
     "test": "jest --watch --verbose",
     "test:co": "jest --coverage --verbose",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --coverage --silent --ci"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
@@ -75,8 +75,8 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx}": "eslint . --cache --fix",
     "*.scss": "stylelint --fix",
-    "*.--write": "prettier --write"
+    "*.--write": "prettier . --write --ignore-unknown"
   }
 }
