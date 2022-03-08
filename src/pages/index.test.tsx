@@ -49,15 +49,17 @@ describe('Home', () => {
 
     describe('should search', () => {
       it("when user types a country that doesn't exist", () => {
-        user.type(screen.getByTestId('input-search'), 'unknown{enter}');
+        user.type(screen.getByRole('textbox'), 'unknown{enter}');
+        expect(screen.queryByText('Montenegro')).not.toBeInTheDocument();
 
-        expect(screen.queryByTestId('country-item')).not.toBeInTheDocument();
+        user.click(screen.getByRole('button', { name: /close-circle/i }));
+        expect(screen.getByRole('heading', { name: /montenegro/i })).toBeInTheDocument();
       });
 
       it('when user types a country that exists', () => {
         const searchText = 'Montenegro{enter}';
 
-        user.type(screen.getByTestId('input-search'), searchText);
+        user.type(screen.getByRole('textbox'), searchText);
 
         expect(screen.getByText('Montenegro')).toBeInTheDocument();
       });
