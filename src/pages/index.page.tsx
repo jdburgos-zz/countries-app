@@ -14,12 +14,14 @@ import { CountryItem } from '@/components/CountryItem';
 /** Interfaces **/
 import { ICountry } from '@/interfaces/country.interface';
 
+/** Api **/
+import { API } from '@/api/endpoints';
+
 /** Antd **/
 const { Option } = Select;
 const { Search } = Input;
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
-const API = 'https://restcountries.com/v3.1/all';
 
 const Home: NextPage = () => {
   const { data, error } = useSWR(API, fetcher);

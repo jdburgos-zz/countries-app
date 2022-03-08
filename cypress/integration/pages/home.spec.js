@@ -24,7 +24,7 @@ describe('Home page', () => {
   });
 
   describe('tries to search a country', () => {
-    describe("when doesn't exit", () => {
+    describe("when doesn't exist", () => {
       afterEach(() => {
         cy.get('[data-test=region-filter] + div').should('not.have.length');
         cy.get('.ant-input-suffix').children('.ant-input-clear-icon').click();
@@ -43,7 +43,7 @@ describe('Home page', () => {
       });
     });
 
-    describe('when does exit', () => {
+    describe('when does exist', () => {
       const searchText = 'Colombia';
       const countryFlag = 'https://flagcdn.com/co.svg';
 
