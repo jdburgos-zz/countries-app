@@ -9,7 +9,7 @@ import Home from '@/pages/index.page';
 import { server } from '@/mocks/server.mock';
 
 /** Utils **/
-import { render, screen, waitForElementToBeRemoved } from '@/utils//test-utils';
+import { render, screen, waitForElementToBeRemoved } from '@/utils/test-utils';
 
 /** Api **/
 import { API } from '@/api/endpoints';
