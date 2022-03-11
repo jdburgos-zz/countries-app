@@ -32,9 +32,28 @@ It correctly bundles Next in production mode and optimizes the build for the bes
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+### `npm test`
+
+Unit test - watching mode
+
+### `npm run test:co`
+
+Unit test - generates coverage
+
+### `npm run test:ci`
+
+Unit test - ci
+
 ### `npm run cypress`
 
 E2E testing
+
+1. start your app in development mode
+2. run cypress command
+
+### `npm run cypress:ci`
+
+E2E testing - headless - ci
 
 ### `npm run lint`
 
